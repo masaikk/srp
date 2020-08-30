@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <!--<script src="./jquery-3.5.1.min.js"></script>-->
+    <script src="./vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div>
+
+            <input checked="checked" type="radio" name="lanu" value="CHN" @click="change_language(1)" style="display:inline-block;"><p style="display:inline-block;" class="erann">中文</p>
+            <input type="radio" name="lanu" value="ENG" @click="change_language(2)" style="display:inline-block;"><p style="display:inline-block;" class="erann">English</p>
+            <input type="radio" name="lanu" value="JAP" @click="change_language(3)" style="display:inline-block;"><p style="display:inline-block;" class="erann">日本語</p>
+
+        </div>
+        <div style="align-content: center">
+            <p id="mainmeassge" style="font-size: 100px; text-align: center">{{message}}</p>
+        </div>
+        <div>
+            <a target="_blank" href="./release.html">视频发布页</a>
+        </div>
+<!--		<div style="border: 2px plum dashed; display: none">
+
+		<p style="display: inline-block; ">网站介绍</p>
+		<video preload="auto" controls="controls" loop="loop" poster="./project/jp3.jpg"  style="border-style: dotted; border-width: 1px; border-color:black ; display: inline-block;">
+			<source id="yukari1" src="./yukarisan_3.mp4" type="video/mp4"></source>
+
+		</video>
+		<p style="display: inline-block;">网站介绍重置版</p>
+		<video preload="auto" controls="controls" loop="loop" poster="./project/jp3.jpg"  style="border-style: dotted; border-width: 1px; border-color:black ; display: inline-block;">
+			<source id="yukari2" src="./yukarisan_5.mp4" type="video/mp4"></source>
+
+		</video>
+		</div>
+		<video display="none" preload="auto" controls="controls" loop="loop" poster="./project/jp3.jpg"  style="border-style: dotted; border-width: 1px; border-color:black ; display: inline-block;">
+			<source id="yukari3" src="./lbw1 .mp4" type="video/mp4"></source>
+		</video>
+		<video display="none" preload="auto" controls="controls" loop="loop" poster="./project/jp3.jpg"  style="border-style: dotted; border-width: 1px; border-color:black ; display: inline-block;">
+			<source id="yukari3" src="./doudizu.mp4" type="video/mp4"></source>
+		</video>-->
+<!--		<video display="none" preload="auto" controls="controls" loop="loop" poster="./project/jp3.jpg"  style="border-style: dotted; border-width: 1px; border-color:black ; display: inline-block;">
+			<source id="yukari3" src="./ttw~1.mp4" type="video/mp4"></source>
+		</video>-->
+<!--		<video display="none" preload="auto" controls="controls" loop="loop" poster="./project/jp3.jpg"  style="border-style: dotted; border-width: 1px; border-color:black ; display: inline-block;">
+			<source id="yukari3" src="./lbw1.mkv" type="video/mkv"></source>
+		</video>
+		<div >
+			<audio  controls="controls"  id="bg-music">
+				<source src='WELCOME2.mp3' type="audio/mp3"></source>
+			</audio>
+			<audio  controls="controls"  id="ay-music" style="display: none">
+				<source src='ay.mp3' type="audio/mp3"></source>
+			</audio>
+		</div>-->
+		<div>
+			<p><a href="https://www.bilibili.com/video/BV1rK411H7Un" target="_blank">live 2D</a></p>
+		</div>
+<!--		<div>
+			<div id="player"></div>
+			<script src="http://cdn.jsdelivr.net/npm/xgplayer/browser/index.js" charset="utf-8"></script>
+			<script src="http://cdn.jsdelivr.net/npm/xgplayer-flv.js/browser/index.js" charset="utf-8"></script>
+			<script type="text/javascript">
+				new window.FlvJsPlayer({
+					id: 'player',
+					isLive: false,
+					playsinline: true,
+					url: './lbw1.flv',
+					autoplay: true,
+					height: 400,
+					width: 600
+				});
+			</script>
+		</div>-->
+
+
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+
+                weltype:1,
+            },
+            computed:{
+                message(){
+                    switch (this.weltype) {
+                        case 1: return '欢迎';break;
+                        case 2: return 'welcome';break;
+                        case 3: return 'こんにちは';break;
+                        default:return '欢迎';break;
+
+                    }
+                }
+            },
+            methods:{
+
+                change_language(e){
+                    this.weltype=parseInt(e);
+
+                },
+            },
+            mounted(){
+
+
+            }
+
+        })
+
+    </script>
+
+</body>
+</html>
